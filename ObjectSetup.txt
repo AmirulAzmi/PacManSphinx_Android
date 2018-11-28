@@ -1,0 +1,291 @@
+
+MATERIALS 
+---------
+Cherries 
+    Material Color: E82E2EFF (Red) 
+    RenderingMode: Opaque
+
+Door 
+    Material Color: FD3CF0FF (Pink) 
+    RenderingMode: Opaque
+
+Dot 
+    Material Color:  FFFFFFFF (White) 
+    RenderingMode: Opaque
+
+Energizer 
+    Material Color: 00FF00FF (Bright Green) 
+    RenderingMode: Opaque
+
+Floor 
+    Material Color: 000000FF (Black) 
+    RenderingMode: Opaque
+
+Ghost 
+    Material Color: FFFFFFAA (White) 
+    RenderingMode: Transparent ********
+
+PacMan 
+    Material Color: FCFF00FF (Bright Yellow)
+    RenderingMode: Opaque
+
+Walls 
+    Material Color: 0219FFFF (Bright Blue) 
+    RenderingMode: Opaque
+
+
+Managers GO
+-----------
+    Position: 
+        x: 13.5
+        y: 1
+        z: 17
+    ATTACH: 
+        LevelScript 
+        AudioSource: background 
+
+
+ADD LAYER UNWALKABLE 
+
+
+Main Camera:
+------------
+    FOV: 32 
+    Near: 0.5
+    Far: 80 
+    Projection: Perspective
+    ATTACH: 
+        SmoothCamScript: 
+            Target: None (set by Level Script)
+            Distance: 10 
+            Height: 3
+            Height Dampning: 10
+            Rotate Dampning: 3
+
+Mini-Map Camera:
+----------------
+    Rotation:
+        x: 90
+        y: 0
+        z: 0
+    Projection: Ortho 
+    Size: 16
+    Near: 0.3
+    Far: 15 
+    ViewPortRect:
+        x: 0.83 y: 0.05
+        w: 0.13 h: 0.25
+
+    REMOVE: 
+        Audio Listener
+
+
+
+Directional Light: 
+------------------
+    Position:
+        x: -2
+        y: 6.3 
+        z: 33
+    Rotation:
+        x: 90 
+        y: 0 
+        z: 60
+    
+
+PREFABS
+-------
+
+GroundPlane
+-----------
+    Position: 
+        x: 13.5 
+        y: -0.7
+        z: 17
+    Scale: 
+        x: 10
+        y: 1
+        z: 5
+
+PTBOGameJamLogo GO 
+------------------
+    Position: 
+
+Corner Outside GO 
+-----------------
+    Rotation:  
+        x: 0
+        y: 90
+        z: 0
+    Corner Inside GO (CUBE)
+    -----------------------
+        Position: 
+            x: 0.215 
+            y: -0.2 
+            z: 0.215 
+        Rotation: 
+            x: 0
+            y: -45
+            z: 0 
+        Scale: 
+            x: 0.25
+            y: 1
+            z: 0.5
+        ATTACH: 
+            BoxCollider
+
+
+
+Wall Outer GO 
+-------------
+    Wall Inner GO (CUBE)
+    --------------------
+        Position: 
+            x: 0
+            y: -0.2
+            z: 0 
+        Scale: 
+            x: 0.25
+            y: 1
+            z: 1
+        ATTACH:  
+            BoxCollider 
+
+
+House Door GO
+-------------
+    Door GO (CUBE)
+    --------------
+        Position: 
+            x: 
+            y: -0.2
+            z: 
+        Scale: 
+            x: 0.15
+            y: 0.18
+            z: 0.8
+
+        ATTACH: 
+            Box Collider: default 
+            RigidBody: ISKINEMATIC / NO GRAVITY 
+
+
+Dot (SPHERE)
+------------
+    Scale: 
+        x: 0.5
+        y: 0.5 
+        z: 0.5
+    ATTACH:
+        RigidBody: NO GRAVITY
+        SphereCollider: ISTRIGGER / Radius: 0.5
+        Pickup Script 
+        
+
+Energizer (SPHERE)
+------------------
+    Scale: 
+        x: 0.75
+        y: 0.75
+        z: 0.75 
+    ATTACH:
+        RigidBody: NO GRAVITY 
+        SphereCollider: ISTRIGGER / Radius: 0.5 
+        Pickup Script 
+        
+
+
+Ghost (CAPSULE)
+---------------
+    Position: 
+        x: 
+        y: -0.2
+        z: 
+    Scale: 
+        x: 0.75
+        y: 0.5
+        z: 0.75
+
+    Eyes GO (EMPTY)
+    ---------------
+        - LeftEye GO (SPHERE)
+        ---------------------
+            Position: 
+                x: -0.15
+                y: 0.2
+                z: 0.5
+            Scale: 
+                x: 0.28
+                y: 0.55
+                z: 0.04
+
+        - RightEye GO (SPHERE)
+        ----------------------
+            Position: 
+                x: 0.15
+                y: 0.2
+                z: 0.5
+            Scale: 
+                x: 0.28
+                y: 0.55
+                z: 0.04
+
+    ATTACH: 
+        RigidBody: NO GRAVITY 
+        CapsuleCollider: default should work
+        GhostController Script 
+        Pathfinding Script
+
+
+Warp GO
+-------
+    Empty GO
+    Scale: 
+        x: 0.5
+        y: 1
+        z: 1.5
+    ATTACH:  
+        Box Collider : ISTRIGGER
+        Warp Script 
+        Particle System: 
+            Warp: 
+                Duration: 5.00
+                Looping: TRUE
+                PreWarm: TRUE
+                Start Lifetime: 2
+                Start Speed" 0.2
+                Start Size: 0.1
+                Start Color: 49B3DBFF 
+                Grav Modifier: 0
+                Simulation Space: World 
+                Simulation Speed: 0.3 
+                Scaling Mode: Local
+                Play on Awake: TRUE
+                Max Particles: 500 
+                Auto Random Seed: TRUE
+            Emission: 
+                Rate Over Time: 200
+                Rate Over Distance: 0
+            Shape: 
+                Box (1,1,1)
+                Emit From Volume
+                Random Direction: 1 
+            Color Over Lifetime: 
+                Color: 48B3DB -> FFFFFF
+            Renderer: 
+                Mode: Bilboard
+                Material: Default-Particle
+
+
+PacMan (Player) GO (Sphere)
+---------------------------
+    Position: 
+    Rotation: 
+    Scale: 
+    ATTACH: 
+        SphereCollider: default 
+        RigidBody: NO GRAVITY
+        Player Script
+        AudioSource x3 (walka walka / energizer / fruit)
+
+

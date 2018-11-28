@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PacManSphinx_Android", "Assembly-CSharp-firstpass.csproj", "{290D2B02-86A3-10C4-C35B-774CD6BC0202}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PacManSphinx_Android", "Assembly-CSharp.csproj", "{F7AE1985-4A4C-0145-B436-3284C6A2B8F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PacManSphinx_Android", "Assembly-CSharp-Editor.csproj", "{CAA55ECE-608A-5725-6B3D-286C3D44ACBB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{290D2B02-86A3-10C4-C35B-774CD6BC0202}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{290D2B02-86A3-10C4-C35B-774CD6BC0202}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{290D2B02-86A3-10C4-C35B-774CD6BC0202}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{290D2B02-86A3-10C4-C35B-774CD6BC0202}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7AE1985-4A4C-0145-B436-3284C6A2B8F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7AE1985-4A4C-0145-B436-3284C6A2B8F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7AE1985-4A4C-0145-B436-3284C6A2B8F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7AE1985-4A4C-0145-B436-3284C6A2B8F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAA55ECE-608A-5725-6B3D-286C3D44ACBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAA55ECE-608A-5725-6B3D-286C3D44ACBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAA55ECE-608A-5725-6B3D-286C3D44ACBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAA55ECE-608A-5725-6B3D-286C3D44ACBB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
