@@ -1,1 +1,1 @@
-"# PacManSphinx_Android" 
+# PacManSphinx_Android
