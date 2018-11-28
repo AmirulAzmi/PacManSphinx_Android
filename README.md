@@ -1,4 +1,4 @@
-# PacManSphinx
+# PacManSphinx (Android)
 Pac-man game with speech recognition
 - Unity 5.6.5
 - Pocketsphinx 5prealpha
